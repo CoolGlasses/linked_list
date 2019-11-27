@@ -1,8 +1,11 @@
 class LinkedList
     def initialize
+        @head = nil
     end
 
-    def append
+    def append(value)
+        
+
     end
 
     def prepend
@@ -12,6 +15,7 @@ class LinkedList
     end
 
     def head
+        @head
     end
 
     def tail
@@ -38,9 +42,6 @@ class LinkedList
 
     def remove_at(index)
     end
-
-    
-
 end
 
 class Node
@@ -51,5 +52,9 @@ class Node
 
     def value
         @value
+    end
+
+    def next
+        @next_node
     end
 end
