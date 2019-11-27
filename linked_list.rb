@@ -2,10 +2,12 @@ class LinkedList
     def initialize
         @head = nil
         @tail = nil
+        @size = 0
     end
 
     def append(value)
         new_node = Node.new(value)
+        @size += 1
 
         if @head == nil
             @head = new_node.value
@@ -17,6 +19,7 @@ class LinkedList
 
     def prepend
         new_node = Node.new(value)
+        @size += 1
 
         if @head == nil
             @head = new_node.value
@@ -35,6 +38,7 @@ class LinkedList
     end
 
     def tail
+        @tail
     end
 
     def at(index)
@@ -42,6 +46,7 @@ class LinkedList
     end
 
     def pop
+        @size -= 1
     end
 
     def contains?
@@ -54,9 +59,11 @@ class LinkedList
     end
 
     def insert_at(index)
+        @size += 1
     end
 
     def remove_at(index)
+        @size -= 1
     end
 end
 
