@@ -89,9 +89,41 @@ class LinkedList
     end
 
     def contains?(value)
+        this_node = @head
+        in_list = false
+
+        finished = false
+        while !finished
+            if this_node.value == value
+                in_list = true
+                finished = true
+                return in_list
+            elsif this_node.next == nil
+                finished = true
+                return in_list
+            else
+                this_node = this_node.next
+            end
+        end
     end
 
     def find(data)
+        this_node = @head
+        index = 0
+
+        finished = false
+        while !finished
+            if this_node.value == data
+                finished = true
+                return index
+            elsif this_node.next == nil
+                finished = true
+                return false
+            else
+                this_node = this_node.next
+                index += 1
+            end
+        end
     end
 
     def to_s
