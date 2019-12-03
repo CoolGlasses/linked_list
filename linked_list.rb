@@ -144,11 +144,39 @@ class LinkedList
     end
 
     def insert_at(index)
+        count = 0
+        this_node = @head
+        new_node = Node.new
 
+        finished_counting = false
+        while !finished_counting
+            if index == count
+                finished_counting = true
+                previous_node.next = new_node
+                new_node.next = this_node
+            else
+                count += 1
+                previous_node = this_node
+                this_node = this_node.next
+            end
+        end
     end
 
     def remove_at(index)
+        count = 0
+        this_node = @head
 
+        finished_counting = false
+        while !finished_counting
+            if index == count
+                finished_counting = true
+                previous_node.next = this_node.next
+            else
+                count += 1
+                previous_node = this_node
+                this_node = this_node.next
+            end
+        end
     end
 end
 
