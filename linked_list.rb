@@ -194,7 +194,7 @@ class Node
         @next_node
     end
 
-    def next=(next_head)
-        @next_node = next_head
+    def next=(next_node)
+        @next_node = next_node
     end
 end
