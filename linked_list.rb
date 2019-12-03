@@ -1,3 +1,5 @@
+##a linkedlist in ruby is code for Russian dolls!
+
 class LinkedList
     def initialize
         @head = nil
@@ -5,26 +7,26 @@ class LinkedList
     end
 
     def append(value)
-        new_node = Node.new(value, @index)
-
+        new_node = Node.new(value)
 
         if @head == nil
-            @head = new_node.value
-            @tail = new_node.value
+            @head = new_node
+            @tail = new_node
         else
-            @tail = new_node.value
+            @tail.next = new_node
+            @tail = new_node
         end
     end
 
     def prepend
-        new_node = Node.new(value, @index)
+        new_node = Node.new(value)
 
         if @head == nil
-            @head = new_node.value
-            @tail = new_node.value
-        else 
+            @head = new_node
+            @tail = new_node
+        else
             new_node.next = @head
-            @head = new_node.value
+            @head = new_node
         end
     end
 
@@ -66,7 +68,7 @@ class LinkedList
 end
 
 class Node
-    def initialize(value, next_node = nil)
+    def initialize(value = nil, next_node = nil)
         @value = value
         @next_node = next_node
     end
