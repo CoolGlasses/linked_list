@@ -127,6 +127,20 @@ class LinkedList
     end
 
     def to_s
+        this_node = @head
+        linked_list = ""
+
+        finished = false
+        while !finished
+            if this_node.next == nil
+                finished = true
+                linked_list += this_node.value.to_s
+                return linked_list
+            else
+                linked_list += this_node.value.to_s
+                this_node = this_node.next
+            end
+        end
     end
 
     def insert_at(index)
