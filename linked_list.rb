@@ -169,12 +169,4 @@ class Node
     def next=(next_head)
         @next_node = next_head
     end
-
-    def head
-        @head
-    end
-
-    def index
-        @index
-    end
 end
