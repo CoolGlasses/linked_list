@@ -57,7 +57,19 @@ class LinkedList
     end
 
     def at(index)
+        count = 0
+        this_node = @head
 
+        finished_counting = false
+        while !finished_counting
+            if index == count
+                finished_counting = true
+            else
+                count += 1
+                this_node = this_node.next
+            end
+        end
+        return this_node
     end
 
     def pop
