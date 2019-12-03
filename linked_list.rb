@@ -31,7 +31,21 @@ class LinkedList
     end
 
     def size
-        @size
+        count = 0
+        this_node = @head
+
+        finished_counting = false
+        while !finished_counting
+            if this_node.next != nil
+                count += 1
+            else
+                finished_counting = true
+            end
+
+            this_node = this_node.next
+        end
+
+        return count
     end
 
     def head
