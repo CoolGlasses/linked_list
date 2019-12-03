@@ -73,9 +73,22 @@ class LinkedList
     end
 
     def pop
+        this_node = @head
+
+        finished = false
+        while !finished
+            if this_node == @tail
+                finished = true
+                @tail = previous_node
+            else
+                previous_node = this_node
+                this_node = this_node.next
+            end
+        end
+        return this_node
     end
 
-    def contains?
+    def contains?(value)
     end
 
     def find(data)
